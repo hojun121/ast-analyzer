@@ -56,11 +56,7 @@ public class CheckCodeQuality {
 		System.out.println("cu.getComment() " + cu.getComment());
 		System.out.println("cu.getEndLine() " + cu.getEndLine());
 		System.out.println("cu.getBeginLine() " + cu.getBeginLine());*/
-		
-		 //Scan the project and upload the results in Sonar Server
-		runSonarScanner();
-		
-		//Read and print Sonar report
+
 	    List<List> listContainer = printSonarReport();
 	    for(List<String> container : listContainer) {	    	
 	    	System.out.println("squid values : " + container.get(0));
