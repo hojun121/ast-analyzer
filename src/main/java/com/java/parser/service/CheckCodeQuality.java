@@ -64,7 +64,6 @@ public class CheckCodeQuality {
 	    List<List> listContainer = printSonarReport();
 	    for(List<String> container : listContainer) {	    	
 	    	System.out.println("squid values : " + container.get(0));
-	    	
 	    }
 
 		List<Class> classes = getClassesOfPackage("com.java.parser.visitor");
@@ -132,10 +131,8 @@ public class CheckCodeQuality {
 					o = (VoidVisitorAdapter) c.newInstance();
 					cu.accept(o, cu);
 				} catch (InstantiationException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (IllegalAccessException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				}
@@ -172,15 +169,11 @@ public class CheckCodeQuality {
 	    System.out.println("ClassDiscovery: Directory = " + directory);
 	    
 	    if (directory != null && directory.exists()) {
-
-	        // Get the list of the files contained in the package
 	        String[] files = directory.list();
 	        for (int i = 0; i < files.length; i++) {
 
-	            // we are only interested in .class files
 	            if (files[i].endsWith(".class")) {
 
-	                // removes the .class extension
 	                String className = pkgname + '.' + files[i].substring(0, files[i].length() - 6);
 
 	                System.out.println("ClassDiscovery: className = " + className);
